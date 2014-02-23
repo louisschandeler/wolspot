@@ -2,11 +2,15 @@ Présentation de l’app :
 
 L’application « Wolspot » à été conçue pour ne plus passer des heures à chercher une soirée aux alentours. Maintenant, trouvez votre soirée en deux temps trois mouvements !
 
+
 Liens : 
 
 Site : http://louisschandeler.be/ilab/
+
 App : http://louisschandeler.be/ilab/app/
+
 Video : http://vimeo.com/87347472
+
 
 Membres du groupe : 
 
@@ -14,6 +18,7 @@ Membres du groupe :
 - Stefano Giunta (https://twitter.com/djount)
 - Julien Piette (https://twitter.com/webulien)
 - Louis Schandeler (https://twitter.com/schandelerlouis)
+
 
 Remarque : 
 
