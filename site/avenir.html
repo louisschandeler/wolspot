@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wolspot est une application mobile qui vous aide à trouver facilement la soirée parfaite.">
+    <meta name="keywords" content="application, mobile, web-design, webdesign, graphic design, belgium, belgique, wolspot, design, app, webapp, soirée, party, developer">
+    <title>Wolspot | Plan d'avenir</title><!-- Bootstrap -->
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <script src="js/modernizr.custom.js" type="text/javascript">
+</script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <section class="intro2">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <h1 class="logo"><a href="index.html">Wolspot</a></h1>
+
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="avenir">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-10">
+                    <h1>Plan d'avenir</h1>
+
+                    <h2>Marketing et communication</h2>
+
+                    <p>Dans un premier temps, nous organiserons une soirée pour promouvoir notre application. Par la suite, nous distribuerons des flyers dans des lieux clés tels que des bals, festivals, cercles, … pour que notre application se propage vite via le bouche à oreille. D’autre part, nous créerons des partenariats avec les cafés, cercles,… afin de leur permettre d’attirer un plus large public à leur soirée mais aussi pour promouvoir notre application un maximum. Pour finir, celle-ci sera disponible gratuitement sur IOS et Android.</p>
+
+                    <h2>Mises à jour</h2>
+
+                    <ul>
+                        <li>Afin de créer une réelle communauté, nous créerons une base de donnée,</li>
+
+                        <li>Il sera possible de partager les spots sur les réseaux sociaux,</li>
+
+                        <li>Nous pourrons comparer notre localisation par rapport à l’événement en question,</li>
+
+                        <li>Il sera possible de publier en plus des photos, des videos de quelques secondes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="container content-section">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+                    <h1>Suivez-nous<img src="img/twitter.svg" width="25"></h1>
+
+                    <ul class="list-group">
+                        <li><a href="https://twitter.com/Tomavid">Jacob Dubut</a></li>
+
+                        <li><a href="https://twitter.com/djount">Stefano Giunta</a></li>
+
+                        <li><a href="https://twitter.com/webulien">Julien Piette</a></li>
+
+                        <li><a href="https://twitter.com/schandelerlouis">Louis Schandeler</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 pull-right">
+                    <div class="btn-group  text-right">
+                        <a href="index.html" class="btn btn-default btn-lg btn-left">&nbsp;&nbsp;&nbsp;Accueil&nbsp;&nbsp;&nbsp;</a>
+                    </div>
+
+                    <div class="btn-group text-right">
+                        <a href="credits.html" class="btn btn-default btn-lg btn-left">Crédits</a>
+                    </div>
+
+                    <div class="p-footer text-left">
+                        <p>Site internet et application réalisé par "Les Castors allumés”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript">
+</script><!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js" type="text/javascript">
+</script><script src="js/cbpScroller.js" type="text/javascript">
+</script><script src="js/classie.js" type="text/javascript">
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js" type="text/javascript">
+</script><script type="text/javascript">
+    new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+    </script><script type="text/javascript">
+$(".btn-group a[href^='#']").on('click', function(e) {
+
+    // prevent default anchor click behavior
+    e.preventDefault();
+
+    // store hash
+    var hash = this.hash;
+
+    // animate
+    $('html, body').animate({
+       scrollTop: $(this.hash).offset().top
+     }, 650, function(){
+
+       // when done, add hash to url
+       // (default click behaviour)
+       window.location.hash = hash;
+     });
+
+    });
+    </script>
+</body>
+</html>

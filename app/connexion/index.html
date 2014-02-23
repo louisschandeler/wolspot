@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width" />
+	    <title>Wolspot</title>
+	    <meta name="description" content="Wolspot vous aide à trouver facilement la soirée parfaite.">
+	    <meta name="keywords" content="Wolspot, Webapp">
+	    <meta name="author" content="Julien Piette, Louis Schandeler, Jacob Dubut, Stefano Giunta">
+	<!-- Web App Data -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<!-- Icons -->
+	<!-- non-retina iPhone pre iOS 7 -->
+		<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57x57-precomposed.png" sizes="57x57">
+	<!-- retina iPhone pre iOS 7 -->
+		<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-114x114-precomposed.png" sizes="114x114">
+	<!-- retina iPhone iOS 7 -->
+		<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-120x120-precomposed.png" sizes="120x120">
+	<!-- iPhone SPLASHSCREEN-->
+		<link href="images/apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+	<!-- iPhone (Retina) SPLASHSCREEN-->
+		<link href="images/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<!-- iPhone SPLASHSCREEN 4" -->
+		<link href="images/apple-touch-startup-image-640x1096.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
+    <!-- Favicon -->
+	    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">  
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <!-- Import Styles-->
+	    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+	    <link rel="stylesheet" type="text/css" href="css/fontello.css">
+	    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- jQuery -->   
+		<script src="js/jquery-2.1.0.min.js"></script>
+    <!-- Modernizr & HTML5 Shiv -->
+	    <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
+	<!-- Web font -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,100,500,700,400' rel='stylesheet' type='text/css'>
+		
+
+	</head>
+	
+	<body onload="init();">
+			
+		<div class="top-bar-fixed"></div>
+<!--  MENU REVEAL
+ -->				
+	        <nav id="nav" class="menu-reveal">
+
+	        	<div id="author-profile">
+	        		<div class="author-profile-photo">
+	        			<img src="images/avatar.jpg" id="yourimage" alt="Your Image"/>
+	        		</div>
+	        		<div class="author-profile-content">
+	        			<p id="surnom" class="title"></p>
+	        		</div>
+	        	</div>
+	        		
+        		<ul id="nav-container" class="nav">
+        			<li><a class="menu-reveal-link" href="#"><span class="icon-eye"></span>Evenements</a></li>
+        			<li><a class="menu-reveal-link" href="#"><span class="icon-users-1"></span>Groupes</a></li>
+        			<li><a class="menu-reveal-link" href="#"><span class="icon-logout"></span>Deconnexion</a></li>
+        		</ul>
+	        </nav>
+<!--  page FIL D'ÉVÉNEMENT
+ -->		        	        
+			<section class="page Evenements active">
+	        
+	        <header class="header">
+	        	<section id="menu-trigger" class="header-button left icon-menu reveal"></section>
+	        	<h1>Fil d'événement</h1>
+	        	<div id="add-location" class="header-button right icon-location add-location"></div><!--  onclick="NewEvent();" -->
+	        </header>
+
+			<div id="accueil" class="new-user hide">
+				<!-- <p id="text-before-button"> -->Vous n'êtes pas inscrit,
+				<button id="button" onclick="goToConnect();">Inscrivez-vous</button>
+				<!-- </p> -->
+			</div>
+			
+				<div class="content">
+					<div class="wrapped-content">
+					
+						<label class="custom-select">
+							<select id="dropdown" class="select">
+								<option value="1" class="icon-users-1">Public</option>
+								<option value="2" class="icon-key-outline">Privé</option>
+							</select>	
+						</label>		
+					
+					</div>							
+					        		
+	        		<div class="event-styling">
+		        		<ul id="maListe" class="wrapped-content"></ul>
+	        		</div>
+					        		
+	        		<ul id="contenu-preencode-a" class="contenu-preencode wrapped-content">
+		        		<li id="event" class="event-author event wrapped-content"><!--onclick="gotoEvent1();-->
+		        			<div class="arrow-right icon-right-open-big"></div>
+		        			<div class="event-author-photo">
+		        				<img src="images/jeffreygeorges.png" alt="">
+							</div>	
+			        		<p class="title">Jeffrey Georges<span class="times">7 min</span></p>
+	        				<p class="name-event">Hawaï 4ver</p>
+	        				<p class="icon-location localisation">Le monde à l'endroit<span class="distance meters">530m</span></p>
+	        				<p class="ilike icon-heart-filled">26</p>
+	        				<p class="idislike icon-heart-broken">3</p>
+		        		</li>
+		        		<li class="event-author event wrapped-content" onclick="gotoEvent2();">
+		        			<div class="arrow-right icon-right-open-big"></div>
+		        			<div class="event-author-photo">
+		        				<img src="images/melissaplume.png" alt="">
+							</div>	
+			        		<p class="title">Melissa Plume<span class="times">20 min</span></p>
+	        				<p class="name-event">Students from Namur</p>
+	        				<p class="icon-location localisation">Place des facs<span class="distance meters">240m</span></p>
+	        				<p class="ilike icon-heart-filled">26</p>
+	        				<p class="idislike icon-heart-broken">3</p>
+		        		</li>
+		        		<li class="event-author event wrapped-content" onclick="gotoEvent3();">
+		        			<div class="arrow-right icon-right-open-big"></div>
+		        			<div class="event-author-photo">
+		        				<img src="images/bertranddubois.png" alt="">
+							</div>	
+			        		<p class="title">Bertrand Dubois<span class="times">30 min</span></p>
+	        				<p class="name-event">Tra-tra-TRAFIC</p>
+	        				<p class="icon-location localisation">Rue de Bruxelles<span class="distance meters">800m</span></p>
+	        				<p class="ilike icon-heart-filled">26</p>
+	        				<p class="idislike icon-heart-broken">3</p>
+		        		</li>
+		        		<li class="event-author event wrapped-content" onclick="gotoEvent4();">
+		        			<div class="arrow-right icon-right-open-big"></div>
+		        			<div class="event-author-photo">
+		        				<img src="images/mayaballard.png" alt="">
+							</div>	
+			        		<p class="title">Maya Ballard<span class="times">57 min</span></p>
+	        				<p class="name-event">Concert Pop-rock</p>
+	        				<p class="icon-location localisation">Places du vieux<span class="distance meters">1200m</span></p>
+	        				<p class="ilike icon-heart-filled">26</p>
+	        				<p class="idislike icon-heart-broken">3</p>
+		        		</li>
+		        	</ul>
+				</div> 
+			</section>
+<!--  page CRÉER UN ÉVÉNEMENT
+ -->				
+			<section class="page create-event">
+	        
+			        <header class="header">
+			        	<div class="header-button left icon-left-open-big" onclick="fallbackEvent();"></div>
+			        	<h1>Publier</h1>
+			        	<div id="publier">
+			        		<label id="terminer" for="submit" onclick="fallbackEvent();">Terminer</label>
+			        	</div>
+			        </header>
+			
+					<div id="map" class="hero">
+    				<div id="infoposition"></div>	
+					</div>	
+					<div class="wrapped-content">
+						<form id="add-event-form" class="full-width" action="#" onsubmit="addValueToList();">
+		        			<div>
+		        				<input type="text" name="name-event" class="inputTitle" id="inputTitle" placeholder="Nom de l’événement?" required>
+		        			</div>
+		        			<div>
+		        				<span class="icon-doc-text"></span>
+		        				<textarea id="textarea" class="textarea" required="" rows="2" cols="15" name="text" placeholder="Description"></textarea>
+		        			</div>
+		        			<div>
+		        				<p class="icon-folder-empty">Choisir un groupe</p>
+		        			</div>
+		        			<input id="submit" type="submit"  class="submit" value="Terminer">
+			        	</form>
+			        						     
+					</div>
+			</section>		
+<!--  page DECONNEXION et CONNEXION
+ -->					
+			<section class="page Deconnexion">
+	        
+		        <header class="header">
+		        	<div class="header-button left icon-left-open-big" onclick="fallbackInscription();"></div>
+		        	<h1>Inscription</h1>
+		        </header>
+				
+				<div class="wrapped-content">					
+		        	
+		        	<div id="avatar">
+			        	<img src="images/avatar.jpg" alt="Your image">	
+		        	</div>
+	        		
+					<form id="signup-form" class="full-width" action="#" onsubmit="validation()">
+        					<div>
+        						<span class="icon-user-outline"></span>
+        						<input type="text" name="nom" id="nom" placeholder="Nom d’utilisateur:" required>
+        					</div>
+        					<div>
+        						<span class="icon-mail"></span>
+        						<input type="email" name="email" id="email" placeholder="Adresse email:" required>
+        					</div>
+        					<div>
+        						<span class="icon-key-outline"></span>
+        						<input type="password" name="password" id="password" placeholder="Mot de passe:" required>
+        					</div>
+								<input type="file" capture="camera" accept="image/*" id="takePictureField">
+        					<div>
+        						<input class="button radius full-width" type="submit" value="S’inscrire">
+        					</div>
+	        		</form>
+				</div>
+			
+			</section>
+<!--  page PUBLICATION 
+ -->
+<section class="page publication-1">
+	        
+		        <header class="header">
+		        	<div class="header-button left icon-left-open-big" onclick="fallbackPublication1();"></div>
+		        	<h1>Publication</h1>
+		        </header>
+				
+				<div class="content">							
+					<div class="publication">
+		        		<div class="wrapped-content publication-author">
+			        			<div class="publication-author-photo">
+			        				<img src="images/jeffreygeorges.png" alt="">
+								</div>
+			        			<div class="publication-author-content">
+			        				
+			        				<p class="name-publication">Hawaï 4ver<span class="times">7 min</span></p>
+			        				<p class="location icon-location">Le monde à l'endroit<span class="meters">530m</span></p>
+			        			</div>
+		        		</div>
+		        		<div class="publication-images wrapped-content">
+		        		<img src="images/publication1.png" alt="publication1">
+		        		</div>
+		        		<p class="publication-content wrapped-content">Concert gratuit tout près du monde à l'endroit, le groupe Hawaï 4ver y joue son dernier album. So cool, so good :)</p>
+						<div id="like">
+							<div class="liker">
+
+							</div>
+						</div>
+					</div> 				
+				</div> 
+			
+			</section>
+<!-- page 2 -->
+			<section class="page publication-2">
+	        
+		        <header class="header">
+		        	<div class="header-button left icon-left-open-big" onclick="fallbackPublication2();"></div>
+		        	<h1>Publication</h1>
+		        </header>
+				
+				<div class="content">							
+					<div class="publication">
+		        		<div class="wrapped-content publication-author">
+			        			<div class="publication-author-photo">
+			        				<img src="images/melissaplume.png" alt="">
+								</div>
+			        			<div class="publication-author-content">
+			        				
+			        				<p class="name-publication">Students from Namur<span class="times">20 min</span></p>
+			        				<p class="location icon-location">Place des facs<span class="meters">240m</span></p>
+			        			</div>
+		        		</div>
+		        		<div class="publication-images wrapped-content">
+		        		<img src="images/publication2.png" alt="publication1">
+		        		</div>
+		        		<p class="publication-content wrapped-content">Soirée organisée par les cercles des facs de Namur, tous les étudiants de toutes les écoles de Namur sont là. Namur en force yeah !!!</p>
+					</div> 				
+				</div> 
+			
+			</section>
+<!-- page 3 -->
+			<section class="page publication-3">
+	        
+		        <header class="header">
+		        	<div class="header-button left icon-left-open-big" onclick="fallbackPublication3();"></div>
+		        	<h1>Publication</h1>
+		        </header>
+				
+				<div class="content">							
+					<div class="publication">
+		        		<div class="wrapped-content publication-author">
+			        			<div class="publication-author-photo">
+			        				<img src="images/bertranddubois.png" alt="">
+								</div>
+			        			<div class="publication-author-content">
+			        				
+			        				<p class="name-publication">Tra-tra-TRAFIC<span class="times">30 min</span></p>
+			        				<p class="location icon-location">Rue de Bruxelles<span class="meters">800m</span></p>
+			        			</div>
+		        		</div>
+		        		<div class="publication-images wrapped-content">
+		        		<img src="images/publication3.png" alt="publication1">
+		        		</div>
+		        		<p class="publication-content wrapped-content">Ambiance de folie ce soir au Trafic, ramenez-vous on va se la mettre sévère. Ce soir c'est soirée DisCo :p</p>
+					</div> 				
+				</div> 
+			
+			</section>
+<!-- page 4 -->
+			<section class="page publication-4">
+	        
+		        <header class="header">
+		        	<div class="header-button left icon-left-open-big" onclick="fallbackPublication4();"></div>
+		        	<h1>Publication</h1>
+		        </header>
+				
+				<div class="content">							
+					<div class="publication">
+		        		<div class="wrapped-content publication-author">
+			        			<div class="publication-author-photo">
+			        				<img src="images/mayaballard.png" alt="">
+								</div>
+			        			<div class="publication-author-content">
+			        				
+			        				<p class="name-publication">Concert Pop-Rock<span class="times">57 min</span></p>
+			        				<p class="location icon-location">Place du vieux<span class="meters">1200m</span></p>
+			        			</div>
+		        		</div>
+		        		<div class="publication-images wrapped-content">
+		        		<img src="images/publication4.png" alt="publication1">
+		        		</div>
+		        		<p class="publication-content wrapped-content">Concert gratuit place du vieux, plein de petits groupes bien sympa. A ne pas louper en tout cas, venez nombreux. Ambiance ambiance ;)</p>
+					</div> 				
+				</div> 
+			
+			</section>			
+
+<!--  page NOUVEAU GROUPE
+ -->					
+			<section class="page newgroup">
+	        
+		        <header class="header">
+		        	<div class="header-button left icon-left-open-big" onclick="fallbackAddNewGroup();"></div>
+		        	<h1>Nouveau groupe</h1>
+	        	<div id="create-group">
+					<label for="submit-add-group">Créer</label>
+	        	</div>
+		        </header>
+				
+				<div class="wrapped-content">
+					<form id="add-group-form" class="full-width" action="#">
+	        			<div>
+	        				<input type="text" name="name-event" id="name-event" placeholder="Nom du groupe?" required>
+	        			</div>
+	        			<div>
+							<label for="box-public">
+								<input type="checkbox" name="filter" id="box-public" value="public"/>
+								<span>Public</span>
+							</label>
+	        			</div>
+	        			<div>
+							<label for="box-private">
+								<input type="checkbox" name="filter" id="box-private" value="private"/>
+								<span>Privé</span>
+							</label>
+	        			</div>
+						<div>
+        					<p class="icon-user-add-outline">Choisir un membre</p>
+						</div>
+	        			<div>
+							<label for="box-friends-1">
+								<input type="checkbox" name="friends" id="box-friends-1" value="louis"/>
+								<span>Louis Schandeler</span>
+							</label>
+	        			</div>
+	        			<div>
+							<label for="box-friends-2">
+								<input type="checkbox" name="friends" id="box-friends-2" value="jacob"/>
+								<span>Jacob Dubut</span>
+							</label>
+	        			</div>
+	        			<div>
+							<label for="box-friends-3">
+								<input type="checkbox" name="friends" id="box-friends-3" value="julien"/>
+								<span>Julien Piette</span>
+							</label>
+	        			</div>
+	        			<div>
+							<label for="box-friends-4">
+								<input type="checkbox" name="friends" id="box-friends-4" value="stefano"/>
+								<span>Stefano Giunta</span>
+							</label>
+	        			</div>
+	        			<input id="submit-add-group" type="submit"  class="submit" value="Créer">
+		        	</form>								
+		        	
+				</div>
+			
+			</section>
+<!--  page GROUPES
+ -->		
+			<section class="page Groupes">
+	        
+		        <header class="header">
+		        	<section class="header-button left icon-left-open-big" onclick="fallbackGroupes();"></section>
+		        	<h1>Groupes</h1>
+		        </header>
+										
+					<div id="custom-avatar-group" class="wrapped-content">
+						<div id="avatar-group">
+				        	<img alt="" src="images/louis.jpg">
+				        	<p>Louis Schandeler</p>	
+			        	</div>
+					</div><!-- end custom-avatar-group wrapped content -->
+					<div id="my-group" class="wrapped-content">
+
+						<p class="icon-users-1">Mes groupes</p>
+						<ul>
+							<li class="icon-right-open-big">Public</li>
+							<li class="icon-right-open-big">Foot</li>
+							<li class="icon-folder-add" onclick="addNewGroup();">Ajouter un groupe</li>
+						</ul>
+					</div><!--end MyGroup wrapped content-->
+			</section><!-- end page groupe-->
+			
+			<div id="alert-box"></div>
+
+
+		<script src="js/recupphoto.js"></script>
+		<script src="js/take-a-picture.js"></script>
+		<script src="js/stok-rekup.js"></script>
+		<script src="js/upload-pic.js"></script>
+		<script src="js/app2.js"></script>
+        
+        <script src="js/ajout.js"></script>			
+		<script src="js/fastclick.js"></script>		
+		<script src="js/app.js"></script>
+		<script src="js/geo.js"></script>
+		<script src="js/gmaps.js"></script>
+		<script src="js/recupvalue.js"></script>
+		<script src="js/newevent.js"></script>	
+		<script src="js/likers.js"></script>
+        <script type="text/javascript">
+				addLikers( document.getElementById("like") );
+		</script>
+
+	</body>
+</html>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
