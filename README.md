@@ -20,6 +20,8 @@ Video : http://vimeo.com/87347472
 - Louis Schandeler (https://twitter.com/schandelerlouis)
 
 
+
+
 <h4>Remarque</h4>
 
 Nous avons mis sur notre Github 2 dossiers pour notre application. Un dossier connexion, avec la « connexion » fonctionnelle et l’autre dossier « publication », avec les publications fonctionnelles. En effet, lorsque nous rassemblions les 2, nous avions des problèmes avec le local storage… Nous avons donc séparé les 2 pour montrer que nous avons réussi à faire fonctionner la connexion mais aussi le côté publication. Nous avons mis en ligne « publication » car nous trouvions qu’il été plus important de mettre cela en ligne.
